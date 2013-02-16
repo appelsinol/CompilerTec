@@ -1,0 +1,26 @@
+%{
+#include <stdio.h>
+
+%}
+
+%option noyywrap
+
+%%
+[0-9]+			{ printf("INT(%s)\n", yytext); }
+[0-9]*\.[0-9]+  { printf("FLOAT(%s)\n", yytext); }
+"+"				{ printf("PLUS\n"); }
+"-"				{ printf("MINUS\n"); }
+"*"				{ printf("MULT\n"); }
+"/"				{ myfunction(5); }
+[\ \t\n]+ 		{}
+%%
+
+void myfunction(int a){
+	if(0){
+		printf("%d\n", a);
+		return a;
+	}
+	else{
+		return a;
+	}
+}

@@ -1,0 +1,16 @@
+#define CN0D(type,data)\
+    node_init ( malloc(sizeof(node_t)), type, data, 0 )
+#define CN0N(type)\
+    node_init ( malloc(sizeof(node_t)), type, NULL, 0 )
+#define CN1D(type,data,A) \
+    node_init ( malloc(sizeof(node_t)), type, data, 1, A )
+#define CN1N(type,A) \
+    node_init ( malloc(sizeof(node_t)), type, NULL, 1, A )
+#define CN2D(type,data,A,B) \
+    node_init ( malloc(sizeof(node_t)), type, data, 2, A, B )
+#define CN2N(type,A,B) \
+    node_init ( malloc(sizeof(node_t)), type, NULL, 2, A, B )
+#define CN3N(type,A,B,C) \
+    node_init ( malloc(sizeof(node_t)), type, NULL, 3, A, B, C )
+
+    \"[^\n]*\"

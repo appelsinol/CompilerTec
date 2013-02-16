@@ -1,0 +1,20 @@
+%{
+#include <stdio.h>
+%}
+
+%option noyywrap
+
+DIGIT [0-9]
+WHITESPACE [\ \t\n]
+
+%%
+{DIGIT}+			{ return INT }
+{DIGIT}*\.{DIGIT}+  { return FLOAT }
+"+"				    { return PLUS }
+"-"				    { return MINUS }
+"*"				    { return MULT}
+"/"				    { return DIV }
+
+{WHITESPACE}+	    {}
+%%
+
