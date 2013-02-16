@@ -25,33 +25,33 @@ STRING \"[^\n]*\"
 ID {LETTER}({LETTER}|{DIGIT})*
 
 %%
-{NUMBERS} { RETURN(NUMBER); }
-{COMMENTS} { }
-{WHITESPACE} {}
-FUNC {RETURN(FUNC);}
-PRINT {RETURN(PRINT);}
-RETURN {RETURN(RETURN);}
-CONTINUE {RETURN(CONTINUE);}
-IF {RETURN(IF);}
-THEN {RETURN(THEN);}
-ELSE {RETURN(ELSE);}
-FI {RETURN(FI);}
-WHILE {RETURN(WHILE);}
-DO {RETURN(DO);}
-DONE {RETURN(DONE);}
-VAR {RETURN(VAR);}
-{STRING} {RETURN(STRING);}
-{ID} {RETURN(IDENTIFIER);}
-":=" {RETURN(ASSIGN);}
-"+" {RETURN('+');}
-"-" {RETURN('-');}
-"*" {RETURN('*');}
-"/" {RETURN('/');}
-">" {RETURN('>');}
-"<" {RETURN('<');}
-"<=" {RETURN(LEQUAL);}
-">=" {RETURN(GEQUAL);}
-"==" {RETURN(EQUAL);}
-"!=" {RETURN(NEQUAL);}
-.           { RETURN( yytext[0] ); }
+{COMMENTS} 		{ }
+{WHITESPACE} 	{ }
+FUNC 			{ RETURN( FUNC ); }
+PRINT 			{ RETURN( PRINT ); }
+RETURN 			{ RETURN( RETURN ); }
+CONTINUE 		{ RETURN( CONTINUE ); }
+IF 				{ RETURN( IF ); }
+THEN 			{ RETURN( THEN ); }
+ELSE 			{ RETURN( ELSE ); }
+FI 				{ RETURN( FI ); }
+WHILE 			{ RETURN( WHILE ); }
+DO 				{ RETURN( DO ); }
+DONE 			{ RETURN( DONE ); }
+VAR 			{ RETURN( VAR ); }
+":=" 			{ RETURN( ASSIGN ); }
+"+" 			{ RETURN( '+' ); }
+"-" 			{ RETURN( '-' ); }
+"*" 			{ RETURN( '*' ); }
+"/" 			{ RETURN( '/' ); }
+">" 			{ RETURN( '>' ); }
+"<" 			{ RETURN( '<' ); }
+"<=" 			{ RETURN( LEQUAL ); }
+">=" 			{ RETURN( GEQUAL ); }
+"==" 			{ RETURN( EQUAL ); }
+"!=" 			{ RETURN( NEQUAL ); }
+{NUMBERS} 		{ RETURN( NUMBER ); }
+{STRING} 		{ RETURN( STRING ); }
+{ID} 			{ RETURN( IDENTIFIER ); }
+.           	{ RETURN( yytext[0] ); }
 %%

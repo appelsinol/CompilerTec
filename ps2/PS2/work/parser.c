@@ -429,7 +429,7 @@ union yyalloc
 #define YYLAST   175
 
 /* YYNTOKENS -- Number of terminals.  */
-#define YYNTOKENS  38
+#define YYNTOKENS  37
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  22
 /* YYNRULES -- Number of rules.  */
@@ -459,7 +459,7 @@ static const yytype_uint8 yytranslate[] =
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,    35,    37,    36,     2,     2,     2,     2,
+       2,     2,     2,    35,     2,    36,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
@@ -494,22 +494,22 @@ static const yytype_uint8 yyprhs[] =
 /* YYRHS -- A `-1'-separated list of the rules' RHS.  */
 static const yytype_int8 yyrhs[] =
 {
-      39,     0,    -1,    40,    -1,    47,    -1,    40,    47,    -1,
-      48,    -1,    41,    48,    -1,    56,    -1,    42,    32,    56,
-      -1,    58,    -1,    43,    32,    58,    -1,    44,    57,    -1,
-      -1,    42,    -1,    -1,    43,    -1,    -1,     7,    58,    33,
-      46,    34,    48,    -1,    50,    -1,    51,    -1,    52,    -1,
-      53,    -1,    54,    -1,    55,    -1,    49,    -1,    35,    44,
-      41,    36,    -1,    58,     6,    56,    -1,     9,    56,    -1,
-      11,    56,    12,    48,    14,    -1,    11,    56,    12,    48,
-      13,    48,    14,    -1,    15,    56,    16,    48,    17,    -1,
-      19,    50,    20,    56,    16,    48,    17,    -1,    10,    -1,
-      56,    27,    56,    -1,    56,    28,    56,    -1,    56,    29,
-      56,    -1,    56,    30,    56,    -1,    56,    25,    56,    -1,
-      56,    26,    56,    -1,    56,    21,    56,    -1,    56,    24,
-      56,    -1,    56,    23,    56,    -1,    56,    22,    56,    -1,
-      28,    56,    -1,    33,    56,    34,    -1,    59,    -1,    58,
-      -1,    58,    33,    45,    34,    -1,    18,    43,    -1,     5,
+      38,     0,    -1,    39,    -1,    46,    -1,    39,    46,    -1,
+      47,    -1,    40,    47,    -1,    55,    -1,    41,    32,    55,
+      -1,    57,    -1,    42,    32,    57,    -1,    43,    56,    -1,
+      -1,    41,    -1,    -1,    42,    -1,    -1,     7,    57,    33,
+      45,    34,    47,    -1,    49,    -1,    50,    -1,    51,    -1,
+      52,    -1,    53,    -1,    54,    -1,    48,    -1,    35,    43,
+      40,    36,    -1,    57,     6,    55,    -1,     9,    55,    -1,
+      11,    55,    12,    47,    14,    -1,    11,    55,    12,    47,
+      13,    47,    14,    -1,    15,    55,    16,    47,    17,    -1,
+      19,    49,    20,    55,    16,    47,    17,    -1,    10,    -1,
+      55,    27,    55,    -1,    55,    28,    55,    -1,    55,    29,
+      55,    -1,    55,    30,    55,    -1,    55,    25,    55,    -1,
+      55,    26,    55,    -1,    55,    21,    55,    -1,    55,    24,
+      55,    -1,    55,    23,    55,    -1,    55,    22,    55,    -1,
+      28,    55,    -1,    33,    55,    34,    -1,    58,    -1,    57,
+      -1,    57,    33,    44,    34,    -1,    18,    42,    -1,     5,
       -1,     3,    -1
 };
 
@@ -534,12 +534,12 @@ static const char *const yytname[] =
   "ASSIGN", "FUNC", "PRINT", "RETURN", "CONTINUE", "IF", "THEN", "ELSE",
   "FI", "WHILE", "DO", "DONE", "VAR", "FOR", "TO", "EQUAL", "GEQUAL",
   "LEQUAL", "NEQUAL", "'<'", "'>'", "'+'", "'-'", "'*'", "'/'", "UMINUS",
-  "','", "'('", "')'", "'{'", "'}'", "'|'", "$accept", "program",
-  "function_list", "statement_list", "expression_list", "variable_list",
-  "declaration_list", "argument_list", "parameter_list", "function",
-  "statement", "block", "assignment_statement", "return_statement",
-  "if_statement", "while_statement", "for_statement", "null_statement",
-  "expression", "declaration", "variable", "integer", 0
+  "','", "'('", "')'", "'{'", "'}'", "$accept", "program", "function_list",
+  "statement_list", "expression_list", "variable_list", "declaration_list",
+  "argument_list", "parameter_list", "function", "statement", "block",
+  "assignment_statement", "return_statement", "if_statement",
+  "while_statement", "for_statement", "null_statement", "expression",
+  "declaration", "variable", "integer", 0
 };
 #endif
 
@@ -551,19 +551,19 @@ static const yytype_uint16 yytoknum[] =
        0,   256,   257,   258,   259,   260,   261,   262,   263,   264,
      265,   266,   267,   268,   269,   270,   271,   272,   273,   274,
      275,   276,   277,   278,   279,    60,    62,    43,    45,    42,
-      47,   280,    44,    40,    41,   123,   125,   124
+      47,   280,    44,    40,    41,   123,   125
 };
 # endif
 
 /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_uint8 yyr1[] =
 {
-       0,    38,    39,    40,    40,    41,    41,    42,    42,    43,
-      43,    44,    44,    45,    45,    46,    46,    47,    48,    48,
-      48,    48,    48,    48,    48,    49,    50,    51,    52,    52,
-      53,    54,    55,    56,    56,    56,    56,    56,    56,    56,
-      56,    56,    56,    56,    56,    56,    56,    56,    57,    58,
-      59
+       0,    37,    38,    39,    39,    40,    40,    41,    41,    42,
+      42,    43,    43,    44,    44,    45,    45,    46,    47,    47,
+      47,    47,    47,    47,    47,    48,    49,    50,    51,    51,
+      52,    53,    54,    55,    55,    55,    55,    55,    55,    55,
+      55,    55,    55,    55,    55,    55,    55,    55,    56,    57,
+      58
 };
 
 /* YYR2[YYN] -- Number of symbols composing right hand side of rule YYN.  */
@@ -680,16 +680,16 @@ static const yytype_int8 yycheck[] =
    symbol of state STATE-NUM.  */
 static const yytype_uint8 yystos[] =
 {
-       0,     7,    39,    40,    47,     5,    58,     0,    47,    33,
-      43,    46,    58,    32,    34,    58,     9,    10,    11,    15,
-      19,    35,    48,    49,    50,    51,    52,    53,    54,    55,
-      58,     3,    28,    33,    56,    58,    59,    56,    56,    50,
-      44,     6,    56,    56,    21,    22,    23,    24,    25,    26,
-      27,    28,    29,    30,    33,    12,    16,    20,    18,    41,
-      48,    57,    56,    34,    56,    56,    56,    56,    56,    56,
-      56,    56,    56,    56,    42,    45,    56,    48,    48,    56,
-      43,    36,    48,    32,    34,    13,    14,    17,    16,    56,
-      48,    48,    14,    17
+       0,     7,    38,    39,    46,     5,    57,     0,    46,    33,
+      42,    45,    57,    32,    34,    57,     9,    10,    11,    15,
+      19,    35,    47,    48,    49,    50,    51,    52,    53,    54,
+      57,     3,    28,    33,    55,    57,    58,    55,    55,    49,
+      43,     6,    55,    55,    21,    22,    23,    24,    25,    26,
+      27,    28,    29,    30,    33,    12,    16,    20,    18,    40,
+      47,    56,    55,    34,    55,    55,    55,    55,    55,    55,
+      55,    55,    55,    55,    41,    44,    55,    47,    47,    55,
+      42,    36,    47,    32,    34,    13,    14,    17,    16,    55,
+      47,    47,    14,    17
 };
 
 #define yyerrok		(yyerrstatus = 0)
@@ -1525,7 +1525,7 @@ yyreduce:
 
   case 6:
 #line 104 "src/parser.y"
-    {(yyval) = node_init ( malloc(sizeof(node_t)), statement_list_n, NULL, 2, (yyvsp[(1) - (2)]), (yyvsp[(2) - (2)]) ); ;}
+    {node_init ( (yyval) = malloc(sizeof(node_t)), statement_list_n, NULL, 2, (yyvsp[(1) - (2)]), (yyvsp[(2) - (2)]) ); ;}
     break;
 
   case 7:
@@ -1620,7 +1620,7 @@ yyreduce:
 
   case 25:
 #line 134 "src/parser.y"
-    {node_init ((yyval) = malloc(sizeof(node_t)), block_n, NULL, 2, (yyvsp[(1) - (4)]), (yyvsp[(3) - (4)]) );;}
+    {node_init ((yyval) = malloc(sizeof(node_t)), block_n, NULL, 2, (yyvsp[(2) - (4)]), (yyvsp[(3) - (4)]) );;}
     break;
 
   case 26:
@@ -1635,27 +1635,27 @@ yyreduce:
 
   case 28:
 #line 142 "src/parser.y"
-    {node_init ( (yyval) = malloc(sizeof(node_t)), if_statement_n, NULL, 2, (yyvsp[(1) - (5)]), (yyvsp[(2) - (5)]));;}
+    {node_init ( (yyval) = malloc(sizeof(node_t)), if_statement_n, NULL, 2, (yyvsp[(2) - (5)]), (yyvsp[(4) - (5)]));;}
     break;
 
   case 29:
 #line 143 "src/parser.y"
-    { (yyval) = node_init ( malloc(sizeof(node_t)), if_statement_n, NULL, 3, (yyvsp[(1) - (7)]), (yyvsp[(2) - (7)]), (yyvsp[(3) - (7)]) );;}
+    { node_init ( (yyval) = malloc(sizeof(node_t)), if_statement_n, NULL, 3, (yyvsp[(2) - (7)]), (yyvsp[(4) - (7)]), (yyvsp[(6) - (7)]) );;}
     break;
 
   case 30:
 #line 145 "src/parser.y"
-    {node_init ( (yyval) = malloc(sizeof(node_t)), while_statement_n, NULL, 2, (yyvsp[(1) - (5)]), (yyvsp[(2) - (5)]));;}
+    {node_init ( (yyval) = malloc(sizeof(node_t)), while_statement_n, NULL, 2, (yyvsp[(2) - (5)]), (yyvsp[(4) - (5)]));;}
     break;
 
   case 31:
 #line 147 "src/parser.y"
-    {node_init ( (yyval) = malloc(sizeof(node_t)), for_statement_n, NULL, 3, (yyvsp[(1) - (7)]), (yyvsp[(2) - (7)]), (yyvsp[(3) - (7)]) );;}
+    {node_init ( (yyval) = malloc(sizeof(node_t)), for_statement_n, NULL, 3, (yyvsp[(2) - (7)]), (yyvsp[(4) - (7)]), (yyvsp[(6) - (7)]) );;}
     break;
 
   case 32:
 #line 149 "src/parser.y"
-    { (yyval) = node_init ( malloc(sizeof(node_t)), null_statement_n, NULL, 0 );;}
+    { node_init ( (yyval) =  malloc(sizeof(node_t)), null_statement_n, NULL, 0 );;}
     break;
 
   case 33:
@@ -1710,12 +1710,12 @@ yyreduce:
 
   case 43:
 #line 161 "src/parser.y"
-    {node_init ( (yyval) = malloc(sizeof(node_t)), expression_n, NULL, 1, (yyvsp[(1) - (2)]) );;}
+    {node_init ( (yyval) = malloc(sizeof(node_t)), expression_n, NULL, 1, (yyvsp[(2) - (2)]) );;}
     break;
 
   case 44:
 #line 162 "src/parser.y"
-    {node_init ( (yyval) = malloc(sizeof(node_t)), expression_n, NULL, 1, (yyvsp[(1) - (3)]) );;}
+    {node_init ( (yyval) = malloc(sizeof(node_t)), expression_n, NULL, 1, (yyvsp[(2) - (3)]) );;}
     break;
 
   case 45:
@@ -1735,7 +1735,7 @@ yyreduce:
 
   case 48:
 #line 167 "src/parser.y"
-    {node_init ( (yyval) = malloc(sizeof(node_t)), declaration_n, NULL, 1, (yyvsp[(1) - (2)]) );;}
+    {node_init ( (yyval) = malloc(sizeof(node_t)), declaration_n, NULL, 1, (yyvsp[(2) - (2)]) );;}
     break;
 
   case 49:
@@ -1964,7 +1964,7 @@ yyreturn:
 }
 
 
-#line 182 "src/parser.y"
+#line 183 "src/parser.y"
  
 
 /*
