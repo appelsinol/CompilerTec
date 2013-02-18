@@ -130,6 +130,7 @@ statement : assignment_statement {node_init ( $$ = malloc(sizeof(node_t)), state
         | for_statement {node_init ( $$ = malloc(sizeof(node_t)), statement_n, NULL, 1, $1);};
         | null_statement {node_init ( $$ = malloc(sizeof(node_t)), statement_n, NULL, 1, $1);};
         | block {node_init ( $$ = malloc(sizeof(node_t)), statement_n, NULL, 1, $1);};
+        | print_statement {node_init ( $$ = malloc(sizeof(node_t)), statement_n, NULL, 1, $1);};
 
 block : '{' declaration_list statement_list '}' {node_init ($$ = malloc(sizeof(node_t)), block_n, NULL, 2, $2, $3 );};
 

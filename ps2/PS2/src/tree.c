@@ -29,8 +29,8 @@ node_print ( FILE *output, node_t *root, uint32_t nesting )
 
 
 node_t * node_init ( node_t *nd, nodetype_t type, void *data, uint32_t n_children, ... ) {
-    va_list args;
 
+    va_list args;
     //Assign values to nd
     nd -> type = type;
     nd -> data = data;
