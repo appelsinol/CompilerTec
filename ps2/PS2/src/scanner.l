@@ -26,7 +26,7 @@ ID {LETTER}({LETTER}|{DIGIT})*
 
 %%
 {COMMENTS} 		{ }
-{WHITESPACE} 	{ }
+{WHITESPACE}+	{ }
 FUNC 			{ RETURN( FUNC ); }
 PRINT 			{ RETURN( PRINT ); }
 RETURN 			{ RETURN( RETURN ); }
