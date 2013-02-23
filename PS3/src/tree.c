@@ -26,19 +26,6 @@ node_print ( FILE *output, node_t *root, uint32_t nesting )
 }
 #endif
 
-//copy from PS2
-void node_finalize ( node_t *discard ) {
-    if (discard != NULL)
-    {
-        //free(discard -> type);
-        free(discard -> data);
-        //free(discard -> entry);
-        //free(discard -> n_children);
-        free(discard -> children);
-        free(discard);
-
-    }
-}
 
 node_t* simplify_tree ( node_t* node ){
 
@@ -74,13 +61,14 @@ node_t* simplify_tree ( node_t* node ){
             // Declaration lists should also be flattened, but their stucture is sligthly
             // different, so they need their own case
             case DECLARATION_LIST:
-            if (node -> n_children > 1 && node -> children[1] == NULL)
+            if (node -> children[1] == NULL)
             {
                 temp = node -> children[0];
+                node_finalize(node -> children[1]);
                 node_finalize(node);
-
             }
-                break;
+            break;
+                
 
             
             // These have only one child, so they are not needed
@@ -99,28 +87,30 @@ node_t* simplify_tree ( node_t* node ){
                 temp = node -> children[0];
                 node_finalize(node);
                 }
-            }else if (node -> n_children > 1)
+            }else if (node -> n_children == 2)
             {
                 if (node -> children[0] -> type.index == INTEGER && 
                     node -> children[1] -> type.index == INTEGER &&
                     node -> data != NULL)
                   {
-                        switch (node -> data){
-                            case "+" : node -> data = node -> children[0] -> data + node -> children[1] -> data; break;
-                            case "-" : node -> data = node -> children[0] -> data - node -> children[1] -> data; break;
-                            case "*" : node -> data = node -> children[0] -> data * node -> children[1] -> data; break;
-                            case "/" : node -> data = node -> children[0] -> data / node -> children[1] -> data; break;
+                        temp = node -> children[0];
+                        //based on data type, assign the value after each opeartion to the temp node.
+                        switch (*((char *)node -> data)){
+                            case '+' : *((int *)temp -> data) = *((int *)(node -> children[0] -> data)) + *((int *)(node -> children[1] -> data)); break;
+                            case '-' : *((int *)temp -> data) = *((int *)(node -> children[0] -> data)) - *((int *)(node -> children[1] -> data)); break;
+                            case '*' : *((int *)temp -> data) = *((int *)(node -> children[0] -> data)) * *((int *)(node -> children[1] -> data)); break;
+                            case '/' : *((int *)temp -> data) = *((int *)(node -> children[0] -> data)) / *((int *)(node -> children[1] -> data)); break;
 
                         }
-                        node -> type = INTEGER;
+                        
                   }  
-                  temp = node;
                   node_finalize(node -> children[0]);
-                  node_finalize(node -> children[1]);
+                  node_finalize(node);
             }
 
     }
     return temp;
+}
 }
 
 
